@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Phish.Wrapper.Core
+{
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Threading.Tasks;
+    using Models;
+    using Models.Setlists;
+
+    public class RequestBase
+    {
+        protected ProjectSettings Settings;
+        protected List<string> Parameters;
+        protected string SectionName;
+        private HttpClient _client;
+
+        public RequestBase()
+        {
+            Parameters = new List<string> { $"apikey={Settings.ApiKey}" };
+        }
+
+        public RequestBase(ProjectSettings settings)
+        {
+            Settings = settings;
+            Parameters = new List<string> { $"apikey={Settings.ApiKey}" };
+        }
+
+        protected HttpClient Client
+        {
+            get
+            {
+                if (_client != null)
+                {
+                    return _client;
+                }
+
+                _client = new HttpClient { BaseAddress = new Uri("https://api.phish.net/v3/") };
+                _client.DefaultRequestHeaders.Accept.Clear();
+                _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                return _client;
+            }
+        }
+
+        protected async Task<Base<SetlistResponse>> MakeRequest(string method)
+        {
+            using var client = Client;
+            var response = await client.GetAsync($"{SectionName}{method}?{string.Join("&", Parameters)}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<Base<SetlistResponse>>();
+            }
+
+            // TODO: add error handling?
+            return null;
+        }
+    }
+}
