@@ -28,5 +28,15 @@
             Parameters.Add($"showdate={showdate}");
             return await MakeRequest("get");
         }
+
+        public async Task<Base<Attendance>> AddAttendance()
+        {
+            //TODO: Must do a post, requires authkey
+        }
+
+        public async Task<Base<Attendance>> RemoveAttendance()
+        {
+            //TODO must do a post, requires authkey
+        }
     }
 }
