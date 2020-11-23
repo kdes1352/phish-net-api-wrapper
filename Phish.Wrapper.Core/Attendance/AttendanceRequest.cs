@@ -9,7 +9,6 @@
     {
         public AttendanceRequest(ProjectSettings settings) : base(settings)
         {
-            Settings = settings;
             SectionName = "attendance";
         }
 

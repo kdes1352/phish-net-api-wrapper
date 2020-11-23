@@ -8,12 +8,14 @@ namespace PhishNetApi.Wrapper.App
     using Core.Artists;
     using Core.Attendance;
     using Core.Blog;
+    using Core.Collections;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
     using Models.Artists;
     using Models.Attendance;
     using Models.Blog;
+    using Models.Collections;
     using Models.Setlists;
 
     class Program
@@ -60,8 +62,21 @@ namespace PhishNetApi.Wrapper.App
 
 
             var blogRequest = new BlogRequest(settings);
-            Task<Base<Blog>> blogs = blogRequest.Get(monthname: "july");
+            Task<Base<Blog>> blogs;
+
+            blogs = blogRequest.Get(monthname: "july");
             Console.WriteLine(blogs.Result);
+
+            var collectionRequest = new CollectionRequest(settings);
+            Task<Base<QueryCollection>> collections;
+
+            //collections = collectionRequest.QueryCollections(contains: "phish");
+            //Console.WriteLine(collections.Result);
+
+            //collectionRequest = new CollectionRequest(settings);
+            Task<GetCollection> getCollections;
+            getCollections = collectionRequest.Get(1294148902);
+            Console.WriteLine(getCollections.Result);
 
             Console.ReadKey();
         }

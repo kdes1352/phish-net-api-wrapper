@@ -25,7 +25,6 @@
 
         public BlogRequest(ProjectSettings settings) : base(settings)
         {
-            Settings = settings;
             SectionName = "blog";
         }
 
