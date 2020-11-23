@@ -1,5 +1,6 @@
 ﻿namespace Phish.Wrapper.Core.Attendance
 {
+    using System;
     using System.Threading.Tasks;
     using Models;
     using Models.Attendance;
@@ -32,11 +33,13 @@
         public async Task<Base<Attendance>> AddAttendance()
         {
             //TODO: Must do a post, requires authkey
+            throw new NotImplementedException();
         }
 
         public async Task<Base<Attendance>> RemoveAttendance()
         {
             //TODO must do a post, requires authkey
+            throw new NotImplementedException();
         }
     }
 }

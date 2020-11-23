@@ -25,7 +25,7 @@
                     return _client;
                 }
 
-                _client = new HttpClient { BaseAddress = new Uri("https://api.phish.net/v3/") };
+                _client = new HttpClient { BaseAddress = new Uri(Constants.ApiBaseUrl) };
                 _client.DefaultRequestHeaders.Accept.Clear();
                 _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
