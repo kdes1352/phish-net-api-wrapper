@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Models.Attendance
+﻿namespace PhishNetApi.Wrapper.Models.Attendance
 {
     using System.Text.Json.Serialization;
 

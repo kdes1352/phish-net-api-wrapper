@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Phish.Wrapper.App
+namespace PhishNetApi.Wrapper.App
 {
     using System.IO;
     using System.Threading.Tasks;

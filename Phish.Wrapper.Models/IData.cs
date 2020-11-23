@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Models
+﻿namespace PhishNetApi.Wrapper.Models
 {
     public interface IData
     {

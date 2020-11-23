@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core.Attendance
+﻿namespace PhishNetApi.Wrapper.Core.Attendance
 {
     using System;
     using System.Threading.Tasks;

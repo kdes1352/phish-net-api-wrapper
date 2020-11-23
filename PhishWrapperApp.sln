@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phish.Wrapper.App", "Phish.Wrapper.App\Phish.Wrapper.App.csproj", "{0932A972-E51D-4735-8F1C-814BFA8C728D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhishNetApi.Wrapper.App", "Phish.Wrapper.App\PhishNetApi.Wrapper.App.csproj", "{0932A972-E51D-4735-8F1C-814BFA8C728D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phish.Wrapper.Models", "Phish.Wrapper.Models\Phish.Wrapper.Models.csproj", "{D30F5CE2-37B2-4BA1-9543-B37F588F4EC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhishNetApi.Wrapper.Models", "Phish.Wrapper.Models\PhishNetApi.Wrapper.Models.csproj", "{D30F5CE2-37B2-4BA1-9543-B37F588F4EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phish.Wrapper.Core", "Phish.Wrapper.Core\Phish.Wrapper.Core.csproj", "{DA3D194D-8144-4A8C-BDF2-78616DFFE29C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhishNetApi.Wrapper.Core", "Phish.Wrapper.Core\PhishNetApi.Wrapper.Core.csproj", "{DA3D194D-8144-4A8C-BDF2-78616DFFE29C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
