@@ -7,19 +7,19 @@
     using System.Threading.Tasks;
     using Models;
 
-    public class RequestBase<T> where T : IData
+    public class Request<T> where T : IData
     {
         protected ProjectSettings Settings;
         protected List<string> Parameters;
         protected string SectionName;
         private HttpClient _client;
 
-        public RequestBase()
+        public Request()
         {
             Parameters = new List<string> { $"apikey={Settings.ApiKey}" };
         }
 
-        public RequestBase(ProjectSettings settings)
+        public Request(ProjectSettings settings)
         {
             Settings = settings;
             Parameters = new List<string> { $"apikey={Settings.ApiKey}" };

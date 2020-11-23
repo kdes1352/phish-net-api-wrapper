@@ -4,7 +4,7 @@
     using Models;
     using Models.Setlists;
 
-    public class SetlistRequest : RequestBase<Setlist>
+    public class SetlistRequest : Request<Setlist>
     {
         public SetlistRequest(ProjectSettings settings) : base(settings)
         {

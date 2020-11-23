@@ -5,7 +5,7 @@
     using Models;
     using Models.Collections;
 
-    public class CollectionRequest : RequestBase<QueryCollection>
+    public class CollectionRequest : Request<QueryCollection>
     {
         public CollectionRequest(ProjectSettings settings) : base(settings)
         {

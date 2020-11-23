@@ -5,7 +5,7 @@
     using Models;
     using Models.Attendance;
 
-    public class AttendanceRequest : RequestBase<Attendance>
+    public class AttendanceRequest : Request<Attendance>
     {
         public AttendanceRequest(ProjectSettings settings) : base(settings)
         {
