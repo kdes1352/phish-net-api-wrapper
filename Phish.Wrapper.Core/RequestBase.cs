@@ -45,7 +45,7 @@
         protected async Task<Base<T>> MakeRequest(string method)
         {
             using var client = Client;
-            var response = await client.GetAsync($"{SectionName}{method}?{string.Join("&", Parameters)}");
+            var response = await client.GetAsync($"{SectionName}/{method}?{string.Join("&", Parameters)}");
 
             if (response.IsSuccessStatusCode)
             {
