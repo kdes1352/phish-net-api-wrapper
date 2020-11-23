@@ -5,6 +5,8 @@
         public static class MethodNames
         {
             public const string All = "all";
+            public const string Appearances = "appearances";
+            public const string ByShow = "byshow";
             public const string Get = "get";
             public const string Progress = "progress";
             public const string Query = "query";
