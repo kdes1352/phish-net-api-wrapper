@@ -2,7 +2,7 @@
 {
     using System.Text.Json.Serialization;
 
-    public class SetlistResponse : IData
+    public class Setlist : IData
     {
         public int ShowId { get; set; }
 
