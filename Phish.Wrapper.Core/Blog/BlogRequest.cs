@@ -5,7 +5,7 @@
     using Models;
     using Models.Blog;
 
-    public class BlogRequest : RequestBase<Blog>
+    public class BlogRequest : Request<Blog>
     {
         private readonly List<string> _monthNames = new List<string>
         {

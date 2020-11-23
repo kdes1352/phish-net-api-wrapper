@@ -9,6 +9,7 @@ namespace PhishNetApi.Wrapper.App
     using Core.Attendance;
     using Core.Blog;
     using Core.Collections;
+    using Core.JamCharts;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
@@ -16,6 +17,7 @@ namespace PhishNetApi.Wrapper.App
     using Models.Attendance;
     using Models.Blog;
     using Models.Collections;
+    using Models.JamCharts;
     using Models.Setlists;
 
     class Program
@@ -75,8 +77,16 @@ namespace PhishNetApi.Wrapper.App
 
             //collectionRequest = new CollectionRequest(settings);
             Task<GetCollection> getCollections;
-            getCollections = collectionRequest.Get(1294148902);
-            Console.WriteLine(getCollections.Result);
+            //getCollections = collectionRequest.Get(1294148902);
+            //Console.WriteLine(getCollections.Result);
+
+            var jamChartRequest = new JamChartRequest(settings);
+            var jamCharts = jamChartRequest.GetAll();
+            Console.WriteLine(jamCharts.Result);
+
+            jamChartRequest = new JamChartRequest(settings);
+            var singleChart = jamChartRequest.GetSingle("8");
+            Console.WriteLine(singleChart.Result);
 
             Console.ReadKey();
         }
