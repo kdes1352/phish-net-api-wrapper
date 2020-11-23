@@ -5,9 +5,11 @@ namespace Phish.Wrapper.App
     using System.IO;
     using System.Threading.Tasks;
     using Core;
+    using Core.Artists;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
+    using Models.Artists;
     using Models.Setlists;
 
     class Program
@@ -15,9 +17,9 @@ namespace Phish.Wrapper.App
         static void Main(string[] args)
         {
             var settings = GetSettings();
-            var request = new SetlistRequest(settings);
 
-            Task<Base<SetlistResponse>> show = null;
+            var request = new SetlistRequest(settings);
+            Task<Base<Setlist>> show;
             // Get Most Recent
             // show = request.GetMostRecent();
 
@@ -34,9 +36,15 @@ namespace Phish.Wrapper.App
             // show = request.GetRandomSetlist();
 
             // Get Most Recent, Including in progress
-            show = request.GetRecentInProgress();
+            // show = request.GetRecentInProgress();
 
-            Console.Write(show.Result);
+            var artistsRequest = new ArtistRequest(settings);
+            Task<ArtistData> artists;
+            // Get All Artists
+            artists = artistsRequest.GetAllArtists();
+            Console.WriteLine(artists.Result);
+
+            //Console.WriteLine(show.Result);
             Console.ReadKey();
         }
 

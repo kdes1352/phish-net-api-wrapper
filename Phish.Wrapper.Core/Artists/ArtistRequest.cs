@@ -1,28 +1,19 @@
-﻿namespace Phish.Wrapper.Core
+﻿namespace Phish.Wrapper.Core.Artists
 {
     using System;
-    using System.Collections.Generic;
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-    using Models;
+    using Models.Artists;
 
-    public class RequestBase<T> where T : IData
+    public class ArtistRequest
     {
-        protected ProjectSettings Settings;
-        protected List<string> Parameters;
-        protected string SectionName;
+        private readonly ProjectSettings Settings;
         private HttpClient _client;
 
-        public RequestBase()
-        {
-            Parameters = new List<string> { $"apikey={Settings.ApiKey}" };
-        }
-
-        public RequestBase(ProjectSettings settings)
+        public ArtistRequest(ProjectSettings settings)
         {
             Settings = settings;
-            Parameters = new List<string> { $"apikey={Settings.ApiKey}" };
         }
 
         protected HttpClient Client
@@ -42,14 +33,14 @@
             }
         }
 
-        protected async Task<Base<T>> MakeRequest(string method)
+        public async Task<ArtistData> GetAllArtists()
         {
             using var client = Client;
-            var response = await client.GetAsync($"{SectionName}{method}?{string.Join("&", Parameters)}");
+            var response = await client.GetAsync($"artists/all?apikey={Settings.ApiKey}");
 
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<Base<T>>();
+                return await response.Content.ReadAsAsync<ArtistData>();
             }
 
             // TODO: add error handling?
