@@ -10,6 +10,7 @@ namespace PhishNetApi.Wrapper.App
     using Core.Blog;
     using Core.Collections;
     using Core.JamCharts;
+    using Core.People;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
@@ -81,12 +82,19 @@ namespace PhishNetApi.Wrapper.App
             //Console.WriteLine(getCollections.Result);
 
             var jamChartRequest = new JamChartRequest(settings);
-            var jamCharts = jamChartRequest.GetAll();
-            Console.WriteLine(jamCharts.Result);
+            //var jamCharts = jamChartRequest.GetAll();
+            //Console.WriteLine(jamCharts.Result);
 
             jamChartRequest = new JamChartRequest(settings);
-            var singleChart = jamChartRequest.GetSingle("8");
-            Console.WriteLine(singleChart.Result);
+            //var singleChart = jamChartRequest.GetSingle("8");
+            //Console.WriteLine(singleChart.Result);
+
+            var peopleRequest = new PeopleRequest(settings);
+            //var people = peopleRequest.GetAll();
+            //Console.WriteLine(people.Result);
+
+            var peopleTypes = peopleRequest.GetPeopleTypes();
+            Console.WriteLine(peopleTypes.Result);
 
             Console.ReadKey();
         }
