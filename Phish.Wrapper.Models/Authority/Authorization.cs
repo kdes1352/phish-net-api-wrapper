@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Models.Authority
+﻿namespace PhishNetApi.Wrapper.Models.Authority
 {
     using System.Collections.Generic;
     using System.Text.Json.Serialization;

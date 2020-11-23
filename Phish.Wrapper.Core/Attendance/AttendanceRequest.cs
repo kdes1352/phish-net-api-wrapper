@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core.Attendance
+﻿namespace PhishNetApi.Wrapper.Core.Attendance
 {
     using System;
     using System.Threading.Tasks;
@@ -15,19 +15,19 @@
 
         public async Task<Base<Attendance>> GetAttendance()
         {
-            return await MakeRequest("get");
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> GetAttendance(int showid)
         {
-            Parameters.Add($"showid={showid}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showid), showid);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> GetAttendance(string showdate)
         {
-            Parameters.Add($"showdate={showdate}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showdate), showdate);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> AddAttendance()

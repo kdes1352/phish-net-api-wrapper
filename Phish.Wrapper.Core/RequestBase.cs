@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core
+﻿namespace PhishNetApi.Wrapper.Core
 {
     using System;
     using System.Collections.Generic;
@@ -54,6 +54,11 @@
 
             // TODO: add error handling?
             return null;
+        }
+
+        protected void AddParameter(string name, object value)
+        {
+            Parameters.Add($"{name}={value}");
         }
     }
 }

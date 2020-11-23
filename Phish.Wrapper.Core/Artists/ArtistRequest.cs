@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core.Artists
+﻿namespace PhishNetApi.Wrapper.Core.Artists
 {
     using System;
     using System.Net.Http;

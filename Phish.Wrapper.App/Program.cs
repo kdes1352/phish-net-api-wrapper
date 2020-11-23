@@ -1,18 +1,20 @@
 ﻿using System;
 
-namespace Phish.Wrapper.App
+namespace PhishNetApi.Wrapper.App
 {
     using System.IO;
     using System.Threading.Tasks;
     using Core;
     using Core.Artists;
     using Core.Attendance;
+    using Core.Blog;
     using Core.Authority;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
     using Models.Artists;
     using Models.Attendance;
+    using Models.Blog;
     using Models.Authority;
     using Models.Setlists;
 
@@ -58,11 +60,15 @@ namespace Phish.Wrapper.App
             //attendance = attendanceRequest.GetAttendance("1999-12-07");
             //Console.WriteLine(attendance.Result);
 
+
+            var blogRequest = new BlogRequest(settings);
+            //Task<Base<Blog>> blogs = blogRequest.Get(monthname: "july");
+            //Console.WriteLine(blogs.Result);
             var authorizationRequest = new AuthorizationRequest(settings);
             Task<Authorization> authority;
 
-            authority = authorizationRequest.GetAuthKey();
-            Console.WriteLine(authority.Result);
+            //authority = authorizationRequest.GetAuthKey();
+            //Console.WriteLine(authority.Result);
 
             Console.ReadKey();
         }
