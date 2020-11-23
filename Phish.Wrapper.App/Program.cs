@@ -93,8 +93,8 @@ namespace PhishNetApi.Wrapper.App
             //var people = peopleRequest.GetAll();
             //Console.WriteLine(people.Result);
 
-            var peopleTypes = peopleRequest.GetPeopleTypes();
-            Console.WriteLine(peopleTypes.Result);
+            //var peopleTypes = peopleRequest.GetPeopleTypes();
+            //Console.WriteLine(peopleTypes.Result);
 
             Console.ReadKey();
         }
