@@ -55,5 +55,10 @@
             // TODO: add error handling?
             return null;
         }
+
+        protected void AddParameter(string name, object value)
+        {
+            Parameters.Add($"{name}={value}");
+        }
     }
 }

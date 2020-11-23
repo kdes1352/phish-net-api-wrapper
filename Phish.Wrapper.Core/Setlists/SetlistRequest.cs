@@ -16,37 +16,37 @@
             return await MakeRequest("latest");
         }
 
-        public async Task<Base<Setlist>> GetSetlist(string showDate)
+        public async Task<Base<Setlist>> GetSetlist(string showdate)
         {
-            Parameters.Add($"showdate={showDate}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showdate), showdate);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Setlist>> GetSetlist(int showid)
         {
-            Parameters.Add($"showid={showid}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showid), showid);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Setlist>> GetRecentSetlists(int limit = 10)
         {
-            Parameters.Add($"limit={limit}");
-            return await MakeRequest("recent");
+            AddParameter(nameof(limit), limit);
+            return await MakeRequest(Constants.MethodNames.Recent);
         }
 
         public async Task<Base<Setlist>> GetTodayInPhishHistory()
         {
-            return await MakeRequest("tiph");
+            return await MakeRequest(Constants.MethodNames.Tiph);
         }
 
         public async Task<Base<Setlist>> GetRandomSetlist()
         {
-            return await MakeRequest("random");
+            return await MakeRequest(Constants.MethodNames.Random);
         }
 
         public async Task<Base<Setlist>> GetRecentInProgress()
         {
-            return await MakeRequest("progress");
+            return await MakeRequest(Constants.MethodNames.Progress);
         }
     }
 }
