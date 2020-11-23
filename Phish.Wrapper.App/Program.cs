@@ -6,10 +6,12 @@ namespace Phish.Wrapper.App
     using System.Threading.Tasks;
     using Core;
     using Core.Artists;
+    using Core.Attendance;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
     using Models.Artists;
+    using Models.Attendance;
     using Models.Setlists;
 
     class Program
@@ -42,9 +44,17 @@ namespace Phish.Wrapper.App
             Task<ArtistData> artists;
             // Get All Artists
             artists = artistsRequest.GetAllArtists();
-            Console.WriteLine(artists.Result);
+            //Console.WriteLine(artists.Result);
 
             //Console.WriteLine(show.Result);
+
+
+            var attendanceRequest = new AttendanceRequest(settings);
+            Task<Base<Attendance>> attendance;
+
+            //attendance = attendanceRequest.GetAttendance();
+            attendance = attendanceRequest.GetAttendance("1999-12-07");
+            Console.WriteLine(attendance.Result);
             Console.ReadKey();
         }
 

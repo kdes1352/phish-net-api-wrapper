@@ -8,7 +8,7 @@
     {
         public SetlistRequest(ProjectSettings settings) : base(settings)
         {
-            SectionName = "setlists/";
+            SectionName = "setlists";
         }
 
         public async Task<Base<Setlist>> GetMostRecent()
