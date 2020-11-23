@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core.Setlists
+﻿namespace PhishNetApi.Wrapper.Core.Setlists
 {
     using System.Threading.Tasks;
     using Models;

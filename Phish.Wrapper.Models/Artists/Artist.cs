@@ -1,7 +1,5 @@
-﻿namespace Phish.Wrapper.Models.Artists
+﻿namespace PhishNetApi.Wrapper.Models.Artists
 {
-    using System.Text.Json.Serialization;
-
     public class Artist
     {
         public int ArtistId { get; set; }

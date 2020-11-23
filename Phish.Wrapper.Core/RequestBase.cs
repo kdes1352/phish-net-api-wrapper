@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core
+﻿namespace PhishNetApi.Wrapper.Core
 {
     using System;
     using System.Collections.Generic;

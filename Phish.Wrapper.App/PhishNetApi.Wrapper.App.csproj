@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Phish.Wrapper.Core\Phish.Wrapper.Core.csproj" />
-    <ProjectReference Include="..\Phish.Wrapper.Models\Phish.Wrapper.Models.csproj" />
+    <ProjectReference Include="..\Phish.Wrapper.Core\PhishNetApi.Wrapper.Core.csproj" />
+    <ProjectReference Include="..\Phish.Wrapper.Models\PhishNetApi.Wrapper.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

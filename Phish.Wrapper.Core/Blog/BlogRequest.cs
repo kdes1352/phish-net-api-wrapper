@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core.Blog
+﻿namespace PhishNetApi.Wrapper.Core.Blog
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;

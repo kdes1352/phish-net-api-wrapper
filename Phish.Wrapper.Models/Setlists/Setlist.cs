@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Models.Setlists
+﻿namespace PhishNetApi.Wrapper.Models.Setlists
 {
     using System.Text.Json.Serialization;
 

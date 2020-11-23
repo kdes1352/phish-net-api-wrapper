@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Models.Blog
+﻿namespace PhishNetApi.Wrapper.Models.Blog
 {
     using System.Text.Json.Serialization;
 

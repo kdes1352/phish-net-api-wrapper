@@ -1,4 +1,4 @@
-﻿namespace Phish.Wrapper.Core
+﻿namespace PhishNetApi.Wrapper.Core
 {
     public class ProjectSettings
     {
