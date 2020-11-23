@@ -1,5 +1,6 @@
 ﻿namespace Phish.Wrapper.Core.Attendance
 {
+    using System;
     using System.Threading.Tasks;
     using Models;
     using Models.Attendance;
@@ -14,29 +15,31 @@
 
         public async Task<Base<Attendance>> GetAttendance()
         {
-            return await MakeRequest("get");
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> GetAttendance(int showid)
         {
-            Parameters.Add($"showid={showid}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showid), showid);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> GetAttendance(string showdate)
         {
-            Parameters.Add($"showdate={showdate}");
-            return await MakeRequest("get");
+            AddParameter(nameof(showdate), showdate);
+            return await MakeRequest(Constants.MethodNames.Get);
         }
 
         public async Task<Base<Attendance>> AddAttendance()
         {
             //TODO: Must do a post, requires authkey
+            throw new NotImplementedException();
         }
 
         public async Task<Base<Attendance>> RemoveAttendance()
         {
             //TODO must do a post, requires authkey
+            throw new NotImplementedException();
         }
     }
 }
