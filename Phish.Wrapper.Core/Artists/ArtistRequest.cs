@@ -5,15 +5,16 @@
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
     using Models.Artists;
+    using Newtonsoft.Json;
 
     public class ArtistRequest
     {
-        private readonly ProjectSettings Settings;
+        private readonly ProjectSettings _settings;
         private HttpClient _client;
 
         public ArtistRequest(ProjectSettings settings)
         {
-            Settings = settings;
+            _settings = settings;
         }
 
         protected HttpClient Client
@@ -36,15 +37,39 @@
         public async Task<ArtistData> GetAllArtists()
         {
             using var client = Client;
-            var response = await client.GetAsync($"artists/all?apikey={Settings.ApiKey}");
+            var response = await client.GetAsync($"artists/all?apikey={_settings.ApiKey}");
 
-            if (response.IsSuccessStatusCode)
+            if (!response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<ArtistData>();
+                // TODO: add error handling?
+                return null;
             }
 
-            // TODO: add error handling?
-            return null;
+            var data = await response.Content.ReadAsAsync<ArtistData>();
+            var counter = 1;
+            foreach (var token in data.Response.Data.Descendants())
+            {
+                var jsonString = token.ToString();
+                if (counter == 1)
+                {
+                    jsonString = jsonString.Remove(0, 5);
+                }
+
+                try
+                {
+                    var artist = JsonConvert.DeserializeObject<Artists>(jsonString);
+
+                    data.Response?.UsableData.Add(artist);
+                }
+                catch
+                {
+                    //empty
+                }
+
+                counter++;
+            }
+
+            return data;
         }
     }
 }

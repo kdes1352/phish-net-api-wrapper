@@ -1,29 +1,28 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Artists
 {
-    using System.Text.Json.Serialization;
+    using System.Collections.Generic;
+    using Newtonsoft.Json.Linq;
 
     public class ArtistResponse
     {
+        public ArtistResponse()
+        {
+            UsableData = new List<Artists>();
+        }
+
         public int Count{ get; set; }
 
-        public Artists Data { get; set; }
+        public JObject Data { get; set; }
+
+        public List<Artists>UsableData { get; set; }
     }
 
     public class Artists
     {
-        [JsonPropertyName("1")]
-        public Artist Phish { get; set; }
+        public int ArtistId { get; set; }
 
-        [JsonPropertyName("2")]
-        public Artist Trey { get; set; }
+        public string Name { get; set; }
 
-        [JsonPropertyName("3")]
-        public Artist Mike { get; set; }
-
-        [JsonPropertyName("4")]
-        public Artist Fish { get; set; }
-
-        [JsonPropertyName("5")]
-        public Artist Page { get; set; }
+        public string Link { get; set; }
     }
 }
