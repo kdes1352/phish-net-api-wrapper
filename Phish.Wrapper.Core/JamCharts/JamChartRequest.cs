@@ -17,7 +17,7 @@
             return await MakeRequest(Constants.MethodNames.All);
         }
 
-        public async Task<SingleJamChart> GetSingle(string songid)
+        public async Task<SingleDataBase<SingleJamChart>> GetSingle(string songid)
         {
             AddParameter(nameof(songid), songid);
 
@@ -26,7 +26,7 @@
 
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<SingleJamChart>();
+                return await response.Content.ReadAsAsync<SingleDataBase<SingleJamChart>>();
             }
 
             return null;

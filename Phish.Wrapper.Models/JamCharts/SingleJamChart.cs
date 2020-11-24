@@ -3,23 +3,7 @@
     using System.Collections.Generic;
     using System.Text.Json.Serialization;
 
-    public class SingleJamChart
-    {
-        [JsonPropertyName("error_code")] public int ErrorCode { get; set; }
-
-        [JsonPropertyName("error_message")] public string ErrorMessage { get; set; }
-
-        public JamChartResponse Response { get; set; }
-    }
-
-    public class JamChartResponse
-    {
-        public int Count { get; set; }
-
-        public JamChartData Data { get; set; }
-    }
-
-    public class JamChartData
+    public class SingleJamChart : ISingleData
     {
         public int SongId { get; set; }
 
@@ -27,7 +11,7 @@
 
         public string Link { get; set; }
 
-        public List<JamChartEntry>Entries { get; set; }
+        public List<JamChartEntry> Entries { get; set; }
     }
 
     public class JamChartEntry

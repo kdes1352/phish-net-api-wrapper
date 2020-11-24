@@ -3,11 +3,6 @@
     using System.Collections.Generic;
     using System.Text.Json.Serialization;
 
-    public class RelationshipData : IData
-    {
-
-    }
-
     public class Relationship : ISingleData
     {
         public List<Person> Friends { get; set; }
@@ -17,7 +12,8 @@
 
     public class Person
     {
-        [JsonPropertyName("uid")] public int UserId { get; set; }
+        // ReSharper disable once InconsistentNaming
+        public int uid { get; set; }
 
         public string Username { get; set; }
     }

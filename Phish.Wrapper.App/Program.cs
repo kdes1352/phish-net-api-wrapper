@@ -12,7 +12,6 @@ namespace PhishNetApi.Wrapper.App
     using Core.JamCharts;
     using Core.People;
     using Core.Relationships;
-    using Core.Reviews;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
     using Models;
@@ -20,7 +19,6 @@ namespace PhishNetApi.Wrapper.App
     using Models.Attendance;
     using Models.Blog;
     using Models.Collections;
-    using Models.JamCharts;
     using Models.Setlists;
 
     class Program
@@ -32,7 +30,8 @@ namespace PhishNetApi.Wrapper.App
             var request = new SetlistRequest(settings);
             Task<Base<Setlist>> show;
             // Get Most Recent
-            // show = request.GetMostRecent();
+            //show = request.GetMostRecent();
+            //Console.WriteLine(show.Result);
 
             // Get Specific Show
             // show = request.GetSetlist(1252698446);
@@ -75,13 +74,13 @@ namespace PhishNetApi.Wrapper.App
             var collectionRequest = new CollectionRequest(settings);
             Task<Base<QueryCollection>> collections;
 
-            //collections = collectionRequest.QueryCollections(contains: "phish");
-            //Console.WriteLine(collections.Result);
+            collections = collectionRequest.QueryCollections(contains: "phish");
+            Console.WriteLine(collections.Result);
 
-            //collectionRequest = new CollectionRequest(settings);
-            Task<GetCollection> getCollections;
-            //getCollections = collectionRequest.Get(1294148902);
-            //Console.WriteLine(getCollections.Result);
+            var singleCollectionRequest = new SingleCollectionRequest(settings);
+            Task<SingleDataBase<SingleCollection>> getCollections;
+            getCollections = singleCollectionRequest.Get(1294148902);
+            Console.WriteLine(getCollections.Result);
 
             var jamChartRequest = new JamChartRequest(settings);
             //var jamCharts = jamChartRequest.GetAll();

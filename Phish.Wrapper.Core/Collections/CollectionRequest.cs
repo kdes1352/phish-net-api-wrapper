@@ -31,20 +31,5 @@
 
             return await MakeRequest(Constants.MethodNames.Query);
         }
-
-        public async Task<GetCollection> Get(int collectionid)
-        {
-            AddParameter(nameof(collectionid), collectionid);
-
-            using var client = Client;
-            var response = await client.GetAsync($"{SectionName}/{Constants.MethodNames.Get}?{string.Join("&", Parameters)}");
-
-            if (response.IsSuccessStatusCode)
-            {
-                return await response.Content.ReadAsAsync<GetCollection>();
-            }
-
-            return null;
-        }
     }
 }
