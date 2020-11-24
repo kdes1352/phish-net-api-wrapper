@@ -1,7 +1,7 @@
 ﻿namespace PhishNetApi.Wrapper.Models.JamCharts
 {
     using System.Collections.Generic;
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class SingleJamChart : ISingleData
     {
@@ -24,10 +24,10 @@
 
         public string Set { get; set; }
 
-        [JsonPropertyName("marked_recommended")]
+        [JsonProperty("marked_recommended")]
         public int Recommended { get; set; }
 
-        [JsonPropertyName("marked_startswith")]
+        [JsonProperty("marked_startswith")]
         public int StartsWith { get; set; }
     }
 }

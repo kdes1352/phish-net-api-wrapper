@@ -1,6 +1,6 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Setlists
 {
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class Setlist : IData
     {
@@ -8,11 +8,11 @@
 
         public string ShowDate { get; set; }
 
-        [JsonPropertyName("short_date")] public string ShortDate { get; set; }
+        [JsonProperty("short_date")] public string ShortDate { get; set; }
 
-        [JsonPropertyName("long_date")] public string LongDate { get; set; }
+        [JsonProperty("long_date")] public string LongDate { get; set; }
 
-        [JsonPropertyName("relative_date")] public string RelativeDate { get; set; }
+        [JsonProperty("relative_date")] public string RelativeDate { get; set; }
 
         public string Url { get; set; }
 

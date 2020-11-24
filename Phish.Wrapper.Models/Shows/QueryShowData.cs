@@ -1,6 +1,7 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Shows
 {
-    // ReSharper disable InconsistentNaming
+    using Newtonsoft.Json;
+
     public class QueryShowData : IData
     {
         public int ShowId { get; set; }
@@ -9,7 +10,8 @@
 
         public string ArtistId { get; set; }
 
-        public string Billed_As { get; set; }
+        [JsonProperty("billed_as")]
+        public string BilledAs { get; set; }
 
         public string Link { get; set; }
 
@@ -25,9 +27,9 @@
 
         public string TourName { get; set; }
 
-        public string Tour_When { get; set; }
+        [JsonProperty("tour_when")]
+        public string TourWhen { get; set; }
 
         public string ArtistLink { get; set; }
     }
-    // ReSharper restore InconsistentNaming
 }

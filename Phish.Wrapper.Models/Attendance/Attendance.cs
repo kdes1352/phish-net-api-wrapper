@@ -1,10 +1,10 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Attendance
 {
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class Attendance : IData
     {
-        [JsonPropertyName("uid")]
+        [JsonProperty("uid")]
         public int UserId { get; set; }
 
         public string Username { get; set; }

@@ -1,24 +1,24 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Reviews
 {
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class Review : IData
     {
         public int ReviewId { get; set; }
 
-        [JsonPropertyName("posted_date")]
+        [JsonProperty("posted_date")]
         public string PostedDate { get; set; }
 
         public string ReviewLink { get; set; }
 
-        [JsonPropertyName("uid")]
+        [JsonProperty("uid")]
         public int UserId { get; set; }
 
         public string Username { get; set; }
 
         public string Avatar { get; set; }
         
-        [JsonPropertyName("attached_to")]
+        [JsonProperty("attached_to")]
         public string AttachedTo { get; set; }
 
         public string Link { get; set; }

@@ -14,6 +14,7 @@ namespace PhishNetApi.Wrapper.App
     using Core.Relationships;
     using Core.Setlists;
     using Core.Shows;
+    using Core.Venues;
     using Microsoft.Extensions.Configuration;
     using Models;
     using Models.Artists;
@@ -114,9 +115,13 @@ namespace PhishNetApi.Wrapper.App
             //var shows = showDataRequest.GetUpcomingShows();
             //Console.WriteLine(shows.Result);
 
-            var showQueryRequest = new ShowQueryRequest(settings);
-            var shows = showQueryRequest.QueryShows(state: "ME");
-            Console.WriteLine(shows.Result);
+            //var showQueryRequest = new ShowQueryRequest(settings);
+            //var shows = showQueryRequest.QueryShows(state: "ME");
+            //Console.WriteLine(shows.Result);
+
+            var venueRequest = new VenueRequest(settings);
+            var venue = venueRequest.Get(1);
+            Console.WriteLine(venue.Result);
 
             Console.ReadKey();
         }

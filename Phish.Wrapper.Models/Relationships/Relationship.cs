@@ -1,7 +1,7 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Relationships
 {
     using System.Collections.Generic;
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class Relationship : ISingleData
     {
@@ -12,8 +12,8 @@
 
     public class Person
     {
-        // ReSharper disable once InconsistentNaming
-        public int uid { get; set; }
+        [JsonProperty("uid")]
+        public int UserId { get; set; }
 
         public string Username { get; set; }
     }
