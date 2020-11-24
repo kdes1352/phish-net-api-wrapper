@@ -1,15 +1,14 @@
 ﻿namespace PhishNetApi.Wrapper.Models.People
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
     public class PeopleTypes
     {
-        [JsonPropertyName("error_code")] public int ErrorCode { get; set; }
+        [JsonProperty("error_code")] public int ErrorCode { get; set; }
 
-        [JsonPropertyName("error_message")] public string ErrorMessage { get; set; }
+        [JsonProperty("error_message")] public string ErrorMessage { get; set; }
 
         public PeopleResponse Response { get; set; }
     }

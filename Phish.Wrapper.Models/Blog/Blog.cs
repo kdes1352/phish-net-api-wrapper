@@ -1,10 +1,10 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Blog
 {
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class Blog : IData
     {
-        [JsonPropertyName("pubdate")]
+        [JsonProperty("pubdate")]
         public string PublishDate { get; set; }
 
         public string Title { get; set; }

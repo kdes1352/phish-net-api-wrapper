@@ -1,6 +1,6 @@
 ﻿namespace PhishNetApi.Wrapper.Models.Collections
 {
-    using System.Text.Json.Serialization;
+    using Newtonsoft.Json;
 
     public class QueryCollection : IData
     {
@@ -8,10 +8,10 @@
 
         public string Username { get; set; }
 
-        [JsonPropertyName("uid")]
+        [JsonProperty("uid")]
         public int UserId { get; set; }
 
-        [JsonPropertyName("collection_name")]
+        [JsonProperty("collection_name")]
         public string Name { get; set; }
 
         public int Count { get; set; }
