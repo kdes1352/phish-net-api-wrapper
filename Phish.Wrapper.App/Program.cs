@@ -110,8 +110,12 @@ namespace PhishNetApi.Wrapper.App
             //var shows = showsRequest.GetShowLinks(1569515741);
             //Console.WriteLine(shows.Result);
 
-            var showDataRequest = new ShowDataRequest(settings);
-            var shows = showDataRequest.GetUpcomingShows();
+            //var showDataRequest = new ShowDataRequest(settings);
+            //var shows = showDataRequest.GetUpcomingShows();
+            //Console.WriteLine(shows.Result);
+
+            var showQueryRequest = new ShowQueryRequest(settings);
+            var shows = showQueryRequest.QueryShows(state: "ME");
             Console.WriteLine(shows.Result);
 
             Console.ReadKey();
