@@ -30,8 +30,8 @@ namespace PhishNetApi.Wrapper.App
             var request = new SetlistRequest(settings);
             Task<Base<Setlist>> show;
             // Get Most Recent
-            //show = request.GetMostRecent();
-            //Console.WriteLine(show.Result);
+            show = request.GetMostRecent();
+            Console.WriteLine(show.Result);
 
             // Get Specific Show
             // show = request.GetSetlist(1252698446);
@@ -121,8 +121,8 @@ namespace PhishNetApi.Wrapper.App
             //var venue = venueRequest.Get(1);
             //Console.WriteLine(venue.Result);
 
-            var venues = venueRequest.GetAll();
-            Console.WriteLine(venues.Result);
+            //var venues = venueRequest.GetAll();
+            //Console.WriteLine(venues.Result);
 
             Console.ReadKey();
         }
