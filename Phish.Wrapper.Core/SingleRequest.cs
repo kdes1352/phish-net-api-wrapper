@@ -4,23 +4,22 @@
     using System.Threading.Tasks;
     using Models;
 
-    public class Request<T>:RequestBase where T : IData
+    public class SingleRequest<T> : RequestBase where T : ISingleData
     {
-        public Request(ProjectSettings settings) : base(settings)
+        public SingleRequest(ProjectSettings settings) : base(settings)
         {
         }
 
-        protected async Task<Base<T>> MakeRequest(string method)
+        protected async Task<SingleDataBase<T>> MakeRequest(string method)
         {
             using var client = Client;
             var response = await client.GetAsync($"{SectionName}/{method}?{string.Join("&", Parameters)}");
 
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadAsAsync<Base<T>>();
+                return await response.Content.ReadAsAsync<SingleDataBase<T>>();
             }
 
-            // TODO: add error handling?
             return null;
         }
     }
