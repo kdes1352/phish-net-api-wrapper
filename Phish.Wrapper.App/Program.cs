@@ -13,6 +13,7 @@ namespace PhishNetApi.Wrapper.App
     using Core.People;
     using Core.Relationships;
     using Core.Setlists;
+    using Core.Shows;
     using Microsoft.Extensions.Configuration;
     using Models;
     using Models.Artists;
@@ -51,8 +52,8 @@ namespace PhishNetApi.Wrapper.App
             var artistsRequest = new ArtistRequest(settings);
             Task<ArtistData> artists;
             // Get All Artists
-            artists = artistsRequest.GetAllArtists();
-            Console.WriteLine(artists.Result);
+            //artists = artistsRequest.GetAllArtists();
+            //Console.WriteLine(artists.Result);
 
             //Console.WriteLine(show.Result);
 
@@ -68,14 +69,14 @@ namespace PhishNetApi.Wrapper.App
             var blogRequest = new BlogRequest(settings);
             Task<Base<Blog>> blogs;
 
-            blogs = blogRequest.Get(monthname: "july");
-            Console.WriteLine(blogs.Result);
+            //blogs = blogRequest.Get(monthname: "july");
+            //Console.WriteLine(blogs.Result);
 
             var collectionRequest = new CollectionRequest(settings);
             Task<Base<QueryCollection>> collections;
 
-            collections = collectionRequest.QueryCollections(contains: "phish");
-            Console.WriteLine(collections.Result);
+            //collections = collectionRequest.QueryCollections(contains: "phish");
+            //Console.WriteLine(collections.Result);
 
             var singleCollectionRequest = new SingleCollectionRequest(settings);
             Task<SingleDataBase<SingleCollection>> getCollections;
@@ -104,6 +105,18 @@ namespace PhishNetApi.Wrapper.App
             //var relRequest = new RelationshipRequest(settings);
             //var relations = relRequest.Get(751);
             //Console.WriteLine(relations.Result);
+
+            //var showsRequest = new ShowLinksRequest(settings);
+            //var shows = showsRequest.GetShowLinks(1569515741);
+            //Console.WriteLine(shows.Result);
+
+            //var showDataRequest = new ShowDataRequest(settings);
+            //var shows = showDataRequest.GetUpcomingShows();
+            //Console.WriteLine(shows.Result);
+
+            var showQueryRequest = new ShowQueryRequest(settings);
+            var shows = showQueryRequest.QueryShows(state: "ME");
+            Console.WriteLine(shows.Result);
 
             Console.ReadKey();
         }
