@@ -11,6 +11,7 @@ namespace PhishNetApi.Wrapper.App
     using Core.Collections;
     using Core.JamCharts;
     using Core.People;
+    using Core.Relationships;
     using Core.Reviews;
     using Core.Setlists;
     using Microsoft.Extensions.Configuration;
@@ -100,6 +101,10 @@ namespace PhishNetApi.Wrapper.App
             //var reviewRequest = new ReviewRequest(settings);
             //var reviews = reviewRequest.QueryReviews(showid: 1605919636);
             //Console.WriteLine(reviews.Result);
+
+            var relRequest = new RelationshipRequest(settings);
+            var relations = relRequest.Get(751);
+            Console.WriteLine(relations.Result);
 
             Console.ReadKey();
         }
