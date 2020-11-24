@@ -52,7 +52,7 @@ namespace PhishNetApi.Wrapper.App
             Task<ArtistData> artists;
             // Get All Artists
             artists = artistsRequest.GetAllArtists();
-            //Console.WriteLine(artists.Result);
+            Console.WriteLine(artists.Result);
 
             //Console.WriteLine(show.Result);
 
@@ -79,8 +79,8 @@ namespace PhishNetApi.Wrapper.App
 
             var singleCollectionRequest = new SingleCollectionRequest(settings);
             Task<SingleDataBase<SingleCollection>> getCollections;
-            getCollections = singleCollectionRequest.Get(1294148902);
-            Console.WriteLine(getCollections.Result);
+            //getCollections = singleCollectionRequest.Get(1294148902);
+            //Console.WriteLine(getCollections.Result);
 
             var jamChartRequest = new JamChartRequest(settings);
             //var jamCharts = jamChartRequest.GetAll();
@@ -101,9 +101,9 @@ namespace PhishNetApi.Wrapper.App
             //var reviews = reviewRequest.QueryReviews(showid: 1605919636);
             //Console.WriteLine(reviews.Result);
 
-            var relRequest = new RelationshipRequest(settings);
-            var relations = relRequest.Get(751);
-            Console.WriteLine(relations.Result);
+            //var relRequest = new RelationshipRequest(settings);
+            //var relations = relRequest.Get(751);
+            //Console.WriteLine(relations.Result);
 
             Console.ReadKey();
         }
