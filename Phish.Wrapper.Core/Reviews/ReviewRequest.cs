@@ -42,5 +42,11 @@
             return await MakeRequest(Constants.MethodNames.Query);
         }
         // ReSharper restore InconsistentNaming
+
+        public async Task<Base<Review>> GetReview(int reviewid)
+        {
+            AddParameter(nameof(reviewid), reviewid);
+            return await MakeRequest(Constants.MethodNames.Get);
+        }
     }
 }

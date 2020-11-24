@@ -97,9 +97,9 @@ namespace PhishNetApi.Wrapper.App
             //var peopleTypes = peopleRequest.GetPeopleTypes();
             //Console.WriteLine(peopleTypes.Result);
 
-            var reviewRequest = new ReviewRequest(settings);
-            var reviews = reviewRequest.QueryReviews(showid: 1605919636);
-            Console.WriteLine(reviews.Result);
+            //var reviewRequest = new ReviewRequest(settings);
+            //var reviews = reviewRequest.QueryReviews(showid: 1605919636);
+            //Console.WriteLine(reviews.Result);
 
             Console.ReadKey();
         }
